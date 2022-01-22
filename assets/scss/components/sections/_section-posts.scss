@@ -1,2 +1,50 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
+
+.posts {
+  padding-bottom: $gap;
+  &__container {
+    @extend %container;
+  }
+
+  &__grid {
+    display: grid;
+
+    @include lg-min {
+      grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+      grid-template-columns: repeat(4, 1fr);
+      gap: $gap;
+    }
+  }
+
+  &-item {
+    &__link {
+      background-color: #eeeeee;
+    }
+
+    &__image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      object-fit: cover;
+    }
+
+    &__caption {
+      p {
+        font-size: 16px;
+        line-height: 20px;
+        color: $color-gray;
+        font-weight: 400;
+        font-family: "Roboto";
+        //   text-align: center;
+      }
+    }
+  }
+}
+
+@for $i from 1 through 6 {
+  .posts-item:nth-of-type(#{$i}) {
+    grid-area: p#{$i};
+  }
+}

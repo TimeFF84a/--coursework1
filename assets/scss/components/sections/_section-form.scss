@@ -1,17 +1,17 @@
 @use "../../presets" as *;
 @use "../../mixins" as *;
 
-// TOdo
-
 .form {
   padding: 30px 0;
   background-color: $color-primary;
+  margin-bottom: 100px;
 
   &__container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: $gap;
-
+    @include lg-min {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: $gap;
+    }
     @extend %container;
   }
 
@@ -23,14 +23,37 @@
       background-color: rgba($color-light, 0.05);
       border: 2px solid rgba($color-light, 0);
       border-bottom-color: rgba($color-light, 0.25);
+      transition: background-color 0.5s, border-color 0.5s;
+
+      font-size: 1.125rem;
+      letter-spacing: 0.15em;
+      padding-left: 30px;
+      color: $color-light;
+    }
+
+    &__input:hover,
+    &__input:focus {
+      background-color: rgba($color-light, 0.15);
+      border: 2px solid rgba($color-light, 0.15);
+      border-bottom-color: rgba($color-light, 1);
     }
   }
 
   .btn--primary {
-    @include lg-min {
-      width: 302px;
-      height: 60px;
-      border: 2px solid $color-primary;
-    }
+    width: 100%;
+    border: 2px solid $color-primary;
+
+    color: $color-light;
+    background-color: rgba($color-light, 0.1);
+    border: 2px solid rgba($color-light, 0);
+    border-bottom-color: rgba($color-light, 0.25);
+  }
+
+  .btn--primary:hover,
+  .btn--primary:focus {
+    background-color: $color-accent;
+    border-color: rgba($color-light, 1);
+    cursor: pointer;
+    transition: background-color 0.5s, border-color 0.5s;
   }
 }

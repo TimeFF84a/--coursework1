@@ -69,3 +69,13 @@
 
   border: 0;
 }
+
+input:hover::placeholder,
+input:focus::placeholder {
+  color: rgba($color-light, 50%);
+  transition: 0.5s;
+}
+
+input:focus {
+  outline: none;
+}

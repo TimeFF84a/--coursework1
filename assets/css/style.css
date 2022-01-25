@@ -394,6 +394,10 @@ a {
   color: #ffffff;
 }
 
+img {
+  border-style: none;
+}
+
 .btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -803,14 +807,28 @@ input:focus {
   transition: background-color 0.5s, border-color 0.5s;
 }
 
-.posts {
-  padding-bottom: 20px;
+.posts h2 {
+  margin-top: 0;
 }
 .posts__grid {
   display: grid;
+  padding-bottom: 20px;
+  gap: 20px;
+}
+.posts-item {
+  background-color: #f2f2f2;
 }
 .posts-item__link {
   background-color: #eeeeee;
+  display: grid;
+  overflow: hidden;
+  height: 100%;
+  grid-template-rows: 300px 1fr;
+}
+.posts-item__link img:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 .posts-item__image {
   display: -webkit-box;
@@ -826,13 +844,42 @@ input:focus {
       align-content: center;
   -o-object-fit: cover;
      object-fit: cover;
+  overflow: hidden;
+  background-color: #2d3651;
+}
+.posts-item__image img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  -o-transition: transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+.posts-item__caption {
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 20px;
+}
+.posts-item__caption h3 {
+  font-size: 1.125rem;
+  line-height: 20px;
+  color: #637588;
+  font-family: "Roboto Slab", serif;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.05em;
 }
 .posts-item__caption p {
   font-size: 16px;
   line-height: 20px;
-  color: #637588;
-  font-weight: 400;
-  font-family: "Roboto";
+  text-align: center;
+  letter-spacing: 0;
+  -webkit-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  transition: color 0.5s;
 }
 
 .posts-item:nth-of-type(1) {
@@ -943,7 +990,6 @@ input:focus {
   .posts__grid {
     grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
   }
 }
 

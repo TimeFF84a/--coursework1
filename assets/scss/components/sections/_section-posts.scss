@@ -29,10 +29,6 @@
       overflow: hidden;
       height: 100%;
       grid-template-rows: 300px 1fr;
-
-      img:hover {
-        transform: scale(1.1);
-      }
     }
 
     &__image {
@@ -73,6 +69,22 @@
         letter-spacing: 0;
         transition: color 0.5s;
       }
+    }
+  }
+
+  &-item a:hover {
+    background-color: #d8d8d8;
+
+    h3 {
+      color: darken($color-gray, 20%);
+    }
+
+    p {
+      color: darken($color-gray, 20%);
+    }
+
+    img {
+      transform: scale(1.1);
     }
   }
 }

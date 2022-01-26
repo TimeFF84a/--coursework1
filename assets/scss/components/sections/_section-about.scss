@@ -47,11 +47,11 @@
     }
 
     p:first-of-type::after {
+      content: "";
       position: absolute;
       top: 0;
       width: 2px;
       height: 200px;
-      content: "";
       background-color: rgba(99, 117, 136, 0.1);
 
       @include lg-min {

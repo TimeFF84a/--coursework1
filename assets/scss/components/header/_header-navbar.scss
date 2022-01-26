@@ -11,6 +11,7 @@
     @include md-min {
       display: none;
     }
+
     width: 30px;
     height: 22.5px;
     position: relative;
@@ -72,22 +73,21 @@
     @include md-min {
       display: grid;
       justify-content: end;
-
-      @include unlist(0 -10px 0 0);
-
       gap: $gap;
       grid-template-columns: repeat(auto-fit, minmax(2em, max-content));
+
+      @include unlist(0 -10px 0 0);
     }
 
     @include md {
       display: none;
-      @include unlist;
-
       background-color: rgba($color-gray-dark, 0.9);
       position: absolute;
       top: 100%;
       right: $gap;
       text-align: right;
+
+      @include unlist;
       @include box-shadow;
     }
   }
@@ -100,9 +100,7 @@
 
   &__link {
     display: block;
-
     transition: color 0.5s;
-
     font-size: 1.125rem;
 
     @include md-min {

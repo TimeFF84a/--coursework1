@@ -9,9 +9,6 @@
 
 html {
   overflow-y: scroll;
-
-  letter-spacing: 0.1em;
-
   font-family: $font-main;
   font-size: $font-size;
 }
@@ -42,12 +39,22 @@ h2 {
   letter-spacing: 0.1em;
   line-height: 1.2em;
   color: $color-primary;
-  font-weight: 700;
-  font-family: "Roboto Slab";
+  font-family: $font-header;
 
   @include lg-min {
     margin-bottom: 3rem;
     font-size: 2.5rem;
+  }
+
+  @include lg-md {
+    margin-bottom: 2.625rem;
+    font-size: 2rem;
+  }
+
+  @include sm {
+    margin-bottom: 2.25rem;
+    text-align: center;
+    font-size: 1.5rem;
   }
 }
 
@@ -60,6 +67,7 @@ a {
   color: $color-light;
 }
 
-img {
-  border-style: none;
+h3 {
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
 }

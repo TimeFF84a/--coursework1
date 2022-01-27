@@ -7,15 +7,27 @@
   margin-bottom: 100px;
 
   &__container {
-    @include lg-min {
-      display: grid;
+    display: grid;
+    gap: $gap;
+
+    @include md-min {
       grid-template-columns: repeat(3, 1fr);
-      gap: $gap;
     }
+
+    @include md-sm {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
     @extend %container;
   }
 
   &-item {
+    @include md-sm {
+      &:nth-of-type(1) {
+        grid-column: 1 / span 2;
+      }
+    }
+
     &__input {
       width: 100%;
       height: 60px;
@@ -29,13 +41,13 @@
       letter-spacing: 0.15em;
       padding-left: 30px;
       color: $color-light;
-    }
 
-    &__input:hover,
-    &__input:focus {
-      background-color: rgba($color-light, 0.15);
-      border: 2px solid rgba($color-light, 0.15);
-      border-bottom-color: rgba($color-light, 1);
+      &:hover,
+      &:focus {
+        background-color: rgba($color-light, 0.15);
+        border: 2px solid rgba($color-light, 0.15);
+        border-bottom-color: rgba($color-light, 1);
+      }
     }
   }
 
@@ -47,13 +59,13 @@
     background-color: rgba($color-light, 0.1);
     border: 2px solid rgba($color-light, 0);
     border-bottom-color: rgba($color-light, 0.25);
-  }
 
-  .btn--primary:hover,
-  .btn--primary:focus {
-    background-color: $color-accent;
-    border-color: rgba($color-light, 1);
-    cursor: pointer;
-    transition: background-color 0.5s, border-color 0.5s;
+    &:hover,
+    &:focus {
+      background-color: $color-accent;
+      border-color: rgba($color-light, 1);
+      cursor: pointer;
+      transition: background-color 0.5s, border-color 0.5s;
+    }
   }
 }

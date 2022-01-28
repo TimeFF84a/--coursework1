@@ -28,18 +28,23 @@
     display: grid;
 
     @include lg-min {
-      gap: 100px;
+      gap: $gap-x5;
       grid-template-columns: 1fr 271px;
     }
 
     @include lg-md {
-      gap: 40px;
+      gap: $gap-x2;
       grid-template-columns: 1fr 271px;
     }
 
     @include md-sm {
-      gap: 20px;
+      gap: $gap;
       grid-template-columns: 1fr 236px;
+    }
+
+    @include sm {
+      gap: $gap;
+      grid-template-columns: 1fr;
     }
 
     @extend %container;

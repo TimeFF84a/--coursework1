@@ -58,8 +58,9 @@ h2 {
   }
 }
 
-p {
-  color: $color-gray;
+h3 {
+  font-size: 1.125rem;
+  letter-spacing: 0.05em;
 }
 
 a {
@@ -67,7 +68,6 @@ a {
   color: $color-light;
 }
 
-h3 {
-  font-size: 1.125rem;
-  letter-spacing: 0.05em;
+p {
+  color: $color-gray;
 }

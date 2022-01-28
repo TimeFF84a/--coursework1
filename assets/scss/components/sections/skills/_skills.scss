@@ -49,7 +49,7 @@
     margin-top: $gap;
 
     @include sm-min {
-      margin-bottom: 30px;
+      margin-bottom: $gap-lg;
     }
   }
 }

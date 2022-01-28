@@ -2,6 +2,31 @@
 @use "../../mixins" as *;
 
 .posts {
+  &__actions {
+    margin-top: $gap;
+    display: flex;
+    justify-content: center;
+
+    @include sm-min {
+      margin-bottom: $gap-lg;
+    }
+  }
+
+  @include lg-min {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @include lg-md {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @include md {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
   h2 {
     @extend %margin-top;
   }
@@ -17,6 +42,21 @@
     @include lg-min {
       grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
       grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include lg-md {
+      grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include md-sm {
+      grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include sm {
+      grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
+      grid-template-columns: 1fr;
     }
   }
 
@@ -39,7 +79,6 @@
 
       display: flex;
       justify-content: center;
-      align-items: center;
       align-content: center;
       object-fit: cover;
       overflow: hidden;
@@ -50,7 +89,6 @@
       display: grid;
       align-content: center;
       padding: 20px;
-      line-height: 18.49px;
 
       h3 {
         color: $color-gray;

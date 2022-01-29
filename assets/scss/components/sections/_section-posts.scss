@@ -2,25 +2,23 @@
 @use "../../mixins" as *;
 
 .posts {
-  &__actions {
-    margin-top: $gap;
-    display: flex;
-    justify-content: center;
-  }
-
   @include lg-min {
     padding-top: 100px;
     padding-bottom: 100px;
   }
-
   @include lg-md {
     padding-top: 80px;
     padding-bottom: 80px;
   }
-
   @include md {
     padding-top: 60px;
     padding-bottom: 60px;
+  }
+  &__actions {
+    display: flex;
+    justify-content: center;
+
+    margin-top: $gap;
   }
 
   h2 {
@@ -33,23 +31,20 @@
 
   &__grid {
     display: grid;
-    gap: $gap;
 
+    gap: $gap;
     @include lg-min {
       grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
       grid-template-columns: repeat(4, 1fr);
     }
-
     @include lg-md {
       grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
       grid-template-columns: repeat(3, 1fr);
     }
-
     @include md-sm {
       grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
       grid-template-columns: repeat(2, 1fr);
     }
-
     @include sm {
       grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
       grid-template-columns: 1fr;
@@ -59,42 +54,51 @@
   &-item {
     background-color: #f2f2f2;
     &__link {
-      background-color: #eeeeee;
       display: grid;
       overflow: hidden;
+
       height: 100%;
+
+      background-color: #eeeeee;
+
       grid-template-rows: 300px 1fr;
     }
 
     &__image {
+      display: flex;
+      overflow: hidden;
+      align-content: center;
+      justify-content: center;
+
+      background-color: #2d3651;
+
+      object-fit: cover;
       img {
         width: 100%;
-        object-fit: cover;
-        transition: transform 0.5s;
-      }
 
-      display: flex;
-      justify-content: center;
-      align-content: center;
-      object-fit: cover;
-      overflow: hidden;
-      background-color: #2d3651;
+        transition: transform 0.5s;
+
+        object-fit: cover;
+      }
     }
 
     &__caption {
       display: grid;
       align-content: center;
+
       padding: 20px;
 
       h3 {
-        color: $color-gray;
-        font-family: $font-header;
         text-align: center;
+
+        color: $color-gray;
+
+        font-family: $font-header;
       }
 
       p {
-        text-align: center;
         transition: color 0.5s;
+        text-align: center;
       }
     }
   }

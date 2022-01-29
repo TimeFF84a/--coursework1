@@ -29,13 +29,13 @@
     letter-spacing: 0.1em;
 
     @include abs-position;
-    @include lg-min {
+    @include md-min {
       font-size: 1.25rem;
     }
 
-    @include lg {
-      font-size: 1.125rem;
-    }
+    // @include lg {
+    //   font-size: 1.125rem;
+    // }
   }
 
   &__link {

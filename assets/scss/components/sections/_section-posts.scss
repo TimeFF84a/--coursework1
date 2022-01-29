@@ -6,10 +6,6 @@
     margin-top: $gap;
     display: flex;
     justify-content: center;
-
-    @include sm-min {
-      margin-bottom: $gap-lg;
-    }
   }
 
   @include lg-min {

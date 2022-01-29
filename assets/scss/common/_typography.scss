@@ -15,12 +15,12 @@ html {
 
 h1 {
   text-align: center;
+
   letter-spacing: 0.08em;
-
-  color: $color-light;
-
   font-family: $font-header;
   font-weight: 300;
+
+  color: $color-light;
 
   @include lg-min {
     font-size: 3.75rem;
@@ -49,6 +49,11 @@ h2 {
   @include lg-md {
     margin-bottom: 2.625rem;
     font-size: 2rem;
+  }
+
+  @include md-sm {
+    margin-bottom: 2.25rem;
+    font-size: 1.5rem;
   }
 
   @include sm {

@@ -11,6 +11,7 @@
   }
 
   &__social {
+    margin-bottom: 40px;
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(50px, max-content));
@@ -19,20 +20,28 @@
     &-link {
       font-size: 2.25rem;
       display: block;
+      padding: 10px;
+      line-height: 1px;
+      transition: color 0.5s;
+
+      &:hover,
+      &:focus {
+        color: $color-accent;
+      }
     }
   }
 
   &__social::after {
     content: "";
     position: absolute;
-    width: 2px;
-    height: 75px;
-
-    background-color: red;
+    width: 75px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    left: calc(50% - 37px);
+    bottom: -20px;
   }
 
   &__copy {
-    padding-top: 60px;
     & span:nth-of-type(1) {
       margin-right: -0.5em;
       letter-spacing: 0.33em;

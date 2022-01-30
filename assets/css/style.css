@@ -475,6 +475,26 @@ input:focus::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
 
+input::-webkit-input-placeholder {
+  color: #637588;
+}
+
+input::-moz-placeholder {
+  color: #637588;
+}
+
+input:-ms-input-placeholder {
+  color: #637588;
+}
+
+input::-ms-input-placeholder {
+  color: #637588;
+}
+
+input::placeholder {
+  color: #637588;
+}
+
 input:focus {
   outline: none;
 }

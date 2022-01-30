@@ -74,7 +74,9 @@ input:focus::placeholder {
 
   color: rgba($color-light, 50%);
 }
-
+input::placeholder {
+  color: $color-gray;
+}
 input:focus {
   outline: none;
 }
